@@ -1,3 +1,4 @@
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -6,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import prismadb from "@/lib/db";
+import { cn } from "@/lib/utils";
 import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -41,7 +43,16 @@ export default async function Home() {
               Quizzzy is a platform for creating quizzes using AI!. Get started
               by loggin in below!
             </CardDescription>
-            <Link href={"/sign-in"}>Sign in </Link>
+            <Link
+              href={"/sign-in"}
+              className={cn(
+                buttonVariants({
+                  variant: "outline",
+                  className: "dark:bg-zinc-950  dark:hover:bg-zinc-900  ",
+                })
+              )}>
+              Sign in{" "}
+            </Link>
           </CardHeader>
         </Card>
       </div>

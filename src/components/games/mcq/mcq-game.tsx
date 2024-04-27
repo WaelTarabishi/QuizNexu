@@ -89,7 +89,7 @@ const MCQ = ({ game }: Props) => {
         }
       },
     });
-  }, [checkAnswer, game.questions.length, questionIndex, toast]);
+  }, [checkAnswer, game.questions.length, questionIndex]);
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key;

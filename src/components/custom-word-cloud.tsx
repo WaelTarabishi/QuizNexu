@@ -24,7 +24,7 @@ const WordCloud = ({ formattedTopics }: Props) => {
     <>
       <D3WordCloud
         data={formattedTopics}
-        height={550}
+        height={250}
         font="Times"
         fontSize={fontSizeMapper}
         rotate={0}

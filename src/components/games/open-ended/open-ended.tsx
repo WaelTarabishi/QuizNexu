@@ -101,7 +101,7 @@ const OpenEnded = ({ game }: Props) => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleNext]);
-  console.log(game);
+  // console.log(game);
   if (hasEnded) {
     return (
       <div className="absolute flex flex-col justify-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">

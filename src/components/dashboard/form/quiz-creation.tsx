@@ -22,7 +22,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-// import LoadingQuestions from "../LoadingQuestions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -30,6 +29,7 @@ import { useMutation } from "@tanstack/react-query";
 
 import toast from "react-hot-toast";
 import { quizCreationSchema } from "@/app/schemas/forms/quiz";
+import LoadingQuestions from "@/components/loading-questions";
 
 type Props = {
   topic: string;
@@ -58,10 +58,10 @@ const QuizCreation = ({ topic: topicParam }: Props) => {
   });
 
   const onSubmit = async (data: Input) => {
-    // setShowLoader(true);
+    setShowLoader(true);
     getQuestions(data, {
       onError: (error) => {
-        // setShowLoader(false);
+        setShowLoader(false);
         if (error instanceof AxiosError) {
           if (error.response?.status === 500) {
             toast.error("Something went wrong.");
@@ -83,9 +83,9 @@ const QuizCreation = ({ topic: topicParam }: Props) => {
   };
   form.watch();
 
-  // if (showLoader) {
-  //   // return <LoadingQuestions finished={finishedLoading} />;
-  // }
+  if (showLoader) {
+    return <LoadingQuestions finished={finishedLoading} />;
+  }
 
   return (
     <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2   ">

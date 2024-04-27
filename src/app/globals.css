@@ -57,3 +57,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.selected-choice {
+  transition: background-color 0.3s ease; /* Add transition property */
+}

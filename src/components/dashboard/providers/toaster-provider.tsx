@@ -2,7 +2,7 @@
 
 import { Toaster } from "react-hot-toast";
 const ToastProvider = () => {
-  return <Toaster />;
+  return <Toaster toastOptions={{ style: { width: "400px" } }} />;
 };
 
 export default ToastProvider;

@@ -2,14 +2,14 @@ import { checkAnswerSchema } from "@/app/schemas/questions";
 import prismadb from "@/lib/db";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
-
+import stringSimilarity from "string-similarity";
 export async function POST(req: Request, res: Response) {
   try {
     const body = await req.json();
 
     const { questionId, userInput } = checkAnswerSchema.parse(body);
 
-    const question = await prisma?.question.findUnique({
+    const question = await prismadb.question.findUnique({
       where: {
         id: questionId,
       },
@@ -21,6 +21,10 @@ export async function POST(req: Request, res: Response) {
         { status: 404 }
       );
     }
+    await prismadb.question.update({
+      where: { id: questionId },
+      data: { userAnswer: userInput },
+    });
     if (question.questionType === "mcq") {
       const isCorrect =
         question.answer.toLowerCase().trim() === userInput.toLowerCase().trim();
@@ -37,6 +41,19 @@ export async function POST(req: Request, res: Response) {
           isCorrect,
         });
       }
+    } else if (question.questionType === "open_ended") {
+      let percentageSimilar = stringSimilarity.compareTwoStrings(
+        question.answer.toLowerCase().trim(),
+        userInput.toLowerCase().trim()
+      );
+      percentageSimilar = Math.round(percentageSimilar * 100);
+      await prismadb.question.update({
+        where: { id: questionId },
+        data: { percentageCorrect: percentageSimilar },
+      });
+      return NextResponse.json({
+        percentageSimilar,
+      });
     }
   } catch (error) {
     if (error instanceof ZodError) {

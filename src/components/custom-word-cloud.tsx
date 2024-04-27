@@ -8,41 +8,10 @@ type Props = {
   formattedTopics: { text: string; value: number }[];
 };
 
-const data = [
-  {
-    text: "hello",
-    value: 2,
-  },
-  {
-    text: "Data",
-    value: 10,
-  },
-  {
-    text: "GGGG",
-    value: 29,
-  },
-  {
-    text: "FFFF",
-    value: 49,
-  },
-  {
-    text: "TTTT",
-    value: 40,
-  },
-  {
-    text: "DDDD",
-    value: 20,
-  },
-  {
-    text: "SSSSS",
-    value: 10,
-  },
-];
-
 const fontSizeMapper = (word: { value: number }) =>
   Math.log2(word.value) * 5 + 16;
 
-const WordCloud = () => {
+const WordCloud = ({ formattedTopics }: Props) => {
   const theme = useTheme();
   const router = useRouter();
   const [isClient, setIsClient] = useState(false);
@@ -54,7 +23,7 @@ const WordCloud = () => {
   return (
     <>
       <D3WordCloud
-        data={data}
+        data={formattedTopics}
         height={550}
         font="Times"
         fontSize={fontSizeMapper}

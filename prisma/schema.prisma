@@ -39,11 +39,17 @@ model Question {
   gameId            String
   options           Json? // for mcq questions
   percentageCorrect Float? // for open_ended questions
-  isCorrect         Boolean? // for mcq questions
+  isCorrect         Boolean? @default(false)
   questionType      GameType
   userAnswer        String?
 
   game Game @relation(fields: [gameId], references: [id])
 
   @@index([gameId])
+}
+
+model TopicCount {
+  id    String @id @default(cuid())
+  topic String @unique
+  count Int
 }

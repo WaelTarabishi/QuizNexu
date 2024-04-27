@@ -2,6 +2,7 @@ import MCQ from "@/components/games/mcq/mcq-game";
 import prismadb from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
 type Props = {
   params: {
@@ -29,7 +30,7 @@ const MCQPage = async ({ params: { gameId } }: Props) => {
   if (!game || game.gameType === "open_ended") {
     return redirect("/quiz");
   }
-  console.log(game);
+
   return <MCQ game={game} />;
 };
 

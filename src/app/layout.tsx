@@ -27,7 +27,10 @@ export default function RootLayout({
       <html lang="en">
         <Providers>
           <body
-            className={cn(inter.className, "antialiased min-h-screen pt-16")}>
+            className={cn(
+              `min-h-screen font-sans antialiased `,
+              inter.className
+            )}>
             <ThemeProvider attribute="class" defaultTheme="system">
               <Navbar />
               {children}

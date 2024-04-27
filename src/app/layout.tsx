@@ -7,6 +7,9 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 
+import ToastProvider from "@/components/dashboard/providers/toaster-provider";
+import Providers from "@/components/dashboard/providers/react-query-provider";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,13 +25,16 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn(inter.className, "antialiased min-h-screen pt-16")}>
-          <ThemeProvider attribute="class" defaultTheme="system">
-            <Navbar />
-
-            {children}
-          </ThemeProvider>
-        </body>
+        <Providers>
+          <body
+            className={cn(inter.className, "antialiased min-h-screen pt-16")}>
+            <ThemeProvider attribute="class" defaultTheme="system">
+              <Navbar />
+              {children}
+              <ToastProvider />
+            </ThemeProvider>
+          </body>
+        </Providers>
       </html>
     </ClerkProvider>
   );

@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# QuizNexus 🧠
 
-## Getting Started
+QuizNexus is a platform for generating and managing quizzes with the power of OpenAI's natural language processing. It allows users to create, share, and solve quizzes on various topics.
 
-First, run the development server:
+## Features 🚀
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🎓 Generate quiz questions using OpenAI's GPT-3
+- 🌈 Stylish UI powered by Shadcn
+- 🛠️ Database powered by Prisma with support for PostgreSQL and Neon DB
+- 🔒 Secure authentication with Clerk
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used 💻
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- OpenAI GPT-3
+- Shadcn
+- Prisma
+- PostgreSQL
+- Neon DB
+- Clerk
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Getting Started 🚀
 
-## Learn More
+To get a local copy up and running, follow these simple steps:
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites 📋
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js
+- npm/yarn
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Installation 💾
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Clone the repository
+   ```sh
+   git clone https://github.com/WaelTarabishi/QuizNexus.git

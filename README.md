@@ -1,4 +1,4 @@
-🧠 QuizNexus - A Comprehensive Quiz Generation and Analytics Platform using OpenAI
+## 🧠 QuizNexus - A Comprehensive Quiz Generation and Analytics Platform using OpenAI
 
 Welcome to QuizNexus - your one-stop solution for creating, managing, and analyzing quizzes effortlessly. With the power of OpenAI's natural language processing, QuizNexus empowers users to craft both multiple-choice and open-ended questions with ease, providing a seamless experience for educators, trainers, and quiz enthusiasts alike. 
 

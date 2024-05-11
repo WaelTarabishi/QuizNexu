@@ -129,7 +129,7 @@ const QuizCreation = ({ topic: topicParam }: Props) => {
                           form.setValue("amount", parseInt(e.target.value));
                         }}
                         min={1}
-                        max={10}
+                        max={3}
                       />
                     </FormControl>
                     <FormDescription>

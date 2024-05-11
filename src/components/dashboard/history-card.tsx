@@ -20,7 +20,7 @@ const HistoryCard = (props: Props) => {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground">
-          View past quiz attempts.
+          View past quiz attempts..
         </p>
       </CardContent>
     </Card>
